@@ -1,0 +1,55 @@
+Design a homepage/landing page for the car rental platform with shadcn and tailwind ui
+The skeleton should be like below
+Header(Logo,Login button)
+Body(Car rental platform data)
+Footer(Copyright)
+Use primary color for header,background,footer The text color should be white
+
+https://ui.shadcn.com/docs/forms/react-hook-form#build-the-form
+Build the register form as per the shadcn form standards . 
+Fields should me name, mobile,email,password,role(user,admin)
+For role selection use select field remaining are inputs
+Form should be vertically and horizonatally centered
+At end the form add link to login if  account already exists
+
+
+Login Page
+Take registerUser integration as referance and intergrate the loginUser based on the 
+selected role navigate user to user/dashboard or admin/dashboard page.
+
+Logout Button
+create a new component in the components folder with the name logoout-button. It should call sup
+abase auth logout function, write that function in users.ts and navigate user  to login
+page after logout. Use this component in both user and admin dashboard pages.
+follow shadcn standards for the design and styling of the button.
+
+Store
+fetch the loggedin user info and store it in global store
+handle the loading state
+
+Spinner
+Create a simple spinner component with w-10 h-10
+
+Menu
+
+If menu icon is clicked render the menu-items component
+
+Now render the menu-items based on loggedin user role
+User ->Dashboard,Cars,Bookings,Profile,Settings
+Admin->Dashboard,Cars,Bookings,Users,Settings 
+Each menu items should have the properties name, path,icon(use lucide-react icons)
+path structure should be "role/modulename like profile dashboard etc"
+
+Cars Server Actions
+Take users.ts server actions as referance and complete all the 
+business logic here 
+methods to implement:
+export const addCar = async (payload:Parttial<ICar>) => {}
+export const FetchCars = async () => {}
+export const deleteCar = async (id:string) => {}
+export const updateCar = async (id:string,payload:Parttial<ICar>) => {}
+export const fetchCarById = async (carId:string) => {}
+
+upload the file to the supabase storage and return the url
+storage bucekt name is "main"
+file name must be always unique
